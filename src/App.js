@@ -1,25 +1,53 @@
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
+import ARVRToggle from './components/ARVRToggle';
+import ARPage from './components/ARPage';
+import DarkModeToggle from './components/DarkModeToggle';
 import './App.css';
 
-function App() {
+const App = () => {
+  const [selectedMode, setSelectedMode] = useState(null);
+  const [darkMode, setDarkMode] = useState(false);
+
+  const handleConfirm = (mode) => {
+    if (mode === 'AR') {
+      setSelectedMode('AR');
+    } else {
+      alert('VR Mode selected - Feature coming soon!');
+    }
+  };
+
+  const handleBack = () => {
+    setSelectedMode(null);
+  };
+
+  const handleToggleDarkMode = () => {
+    setDarkMode((prevMode) => !prevMode);
+  };
+
+  useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+  }, [darkMode]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={`App ${selectedMode === 'AR' ? 'ar-mode' : ''}`}>
+      {selectedMode !== 'AR' && (
+        <div className="toggle-container">
+          <DarkModeToggle darkMode={darkMode} onToggle={handleToggleDarkMode} />
+          <div className="overlay">
+            <h1 className="title">Psyche</h1>
+            <ARVRToggle onConfirm={handleConfirm} darkMode={darkMode} />
+          </div>
+        </div>
+      )}
+      {selectedMode === 'AR' && (
+        <ARPage onBack={handleBack} />
+      )}
     </div>
   );
-}
+};
 
 export default App;

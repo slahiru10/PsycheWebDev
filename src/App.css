@@ -1,38 +1,69 @@
+html, body {
+  font-family: 'Helvetica Neue', sans-serif;
+  background-color: #ececec;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  transition: background-color 0.3s, color 0.3s;
+  overflow: hidden; /* Prevent scrolling */
+}
+
 .App {
-  text-align: center;
+  height: 100%;
+  width: 100%;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.toggle-container {
+  width: 100%;
+  height: 100vh; /* Use 100vh to make sure it covers the full screen height */
+  background-image: url('./assets/image.jpeg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.overlay {
+  text-align: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.4); /* Adjusted transparency for a smoother effect */
+  border-radius: 10px;
+  width: 90%; /* Adjust for smaller screens */
+  max-width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for better contrast */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.title {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(1);
+}
+
+.ar-mode {
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.fullscreen-container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
 }
