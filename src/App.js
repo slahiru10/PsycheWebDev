@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ARVRToggle from './components/ARVRToggle';
 import ARPage from './components/ARPage';
 import DarkModeToggle from './components/DarkModeToggle';
+import Navbar from './components/Navbar';
 import './App.css';
 
 const App = () => {
@@ -33,6 +34,7 @@ const App = () => {
   }, [darkMode]);
 
   return (
+    <Navbar /> {}
     <div className={`App ${selectedMode === 'AR' ? 'ar-mode' : ''}`}>
       {selectedMode !== 'AR' && (
         <div className="toggle-container">
