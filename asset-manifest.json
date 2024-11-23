@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.95ebe379.css",
-    "main.js": "/static/js/main.68212f12.js",
-    "static/js/453.04e2337a.chunk.js": "/static/js/453.04e2337a.chunk.js",
-    "static/media/background.gif": "/static/media/background.10ac62c6fe248c385604.gif",
-    "index.html": "/index.html",
-    "main.95ebe379.css.map": "/static/css/main.95ebe379.css.map",
-    "main.68212f12.js.map": "/static/js/main.68212f12.js.map",
-    "453.04e2337a.chunk.js.map": "/static/js/453.04e2337a.chunk.js.map"
+    "main.css": "/psychewebdev/static/css/main.0c5b28c7.css",
+    "main.js": "/psychewebdev/static/js/main.47aba699.js",
+    "static/js/453.04e2337a.chunk.js": "/psychewebdev/static/js/453.04e2337a.chunk.js",
+    "static/media/background.gif": "/psychewebdev/static/media/background.10ac62c6fe248c385604.gif",
+    "index.html": "/psychewebdev/index.html",
+    "main.0c5b28c7.css.map": "/psychewebdev/static/css/main.0c5b28c7.css.map",
+    "main.47aba699.js.map": "/psychewebdev/static/js/main.47aba699.js.map",
+    "453.04e2337a.chunk.js.map": "/psychewebdev/static/js/453.04e2337a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.95ebe379.css",
-    "static/js/main.68212f12.js"
+    "static/css/main.0c5b28c7.css",
+    "static/js/main.47aba699.js"
   ]
 }
