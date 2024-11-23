@@ -1,46 +1,35 @@
 import React, { useEffect, useState } from 'react';
-import ARVRToggle from './components/ARVRToggle';
 import ARPage from './components/ARPage';
-import DarkModeToggle from './components/DarkModeToggle';
+import CustomNavbar from './components/Navbar';
 import './App.css';
 
 const App = () => {
   const [selectedMode, setSelectedMode] = useState(null);
-  const [darkMode, setDarkMode] = useState(false);
 
-  const handleConfirm = (mode) => {
-    if (mode === 'AR') {
-      setSelectedMode('AR');
-    } else {
-      alert('VR Mode selected - Feature coming soon!');
-    }
+  const handleStartAR = () => {
+    setSelectedMode('AR');
   };
 
   const handleBack = () => {
     setSelectedMode(null);
   };
 
-  const handleToggleDarkMode = () => {
-    setDarkMode((prevMode) => !prevMode);
+  const handleHomeClick = () => {
+    setSelectedMode(null);
   };
 
   useEffect(() => {
-    if (darkMode) {
-      document.body.classList.add('dark-mode');
-    } else {
-      document.body.classList.remove('dark-mode');
-    }
-  }, [darkMode]);
+    document.body.classList.add('dark-mode');
+  }, []);
 
   return (
     <div className={`App ${selectedMode === 'AR' ? 'ar-mode' : ''}`}>
+      <CustomNavbar onHomeClick={handleHomeClick} />
       {selectedMode !== 'AR' && (
-        <div className="toggle-container">
-          <DarkModeToggle darkMode={darkMode} onToggle={handleToggleDarkMode} />
-          <div className="overlay">
-            <h1 className="title">Psyche</h1>
-            <ARVRToggle onConfirm={handleConfirm} darkMode={darkMode} />
-          </div>
+        <div className="start-container">
+          <button className="start-button" onClick={handleStartAR}>
+            START AR
+          </button>
         </div>
       )}
       {selectedMode === 'AR' && (

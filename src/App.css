@@ -1,6 +1,8 @@
+/* General Styles */
 html, body {
   font-family: 'Helvetica Neue', sans-serif;
-  background-color: #ececec;
+  background-color: #222; /* Dark mode background */
+  color: #f0f0f0; /* Dark mode text color */
   margin: 0;
   padding: 0;
   height: 100%;
@@ -9,50 +11,66 @@ html, body {
   overflow: hidden; /* Prevent scrolling */
 }
 
+/* Main App Container */
 .App {
-  height: 100%;
+  padding-top: 0px; /* Space for navbar */
+  height: calc(100vh - 70px); /* Height adjusted to account for navbar height */
   width: 100%;
   transition: background-color 0.3s, color 0.3s;
 }
 
-.toggle-container {
+/* Transparent Navbar */
+.transparent-navbar {
+  background-color: rgba(0, 0, 0, 0.25); /* Black background with 25% transparency */
+  border-bottom: none; /* Remove any border if needed */
+}
+
+.transparent-navbar .navbar-brand,
+.transparent-navbar .nav-link {
+  color: #ffffff !important; /* White text for visibility against the GIF background */
+}
+
+.transparent-navbar .navbar-brand:hover,
+.transparent-navbar .nav-link:hover {
+  color: #00bcd4 !important; /* Change color on hover for better visibility */
+}
+
+/* Container for START AR Button */
+.start-container {
   width: 100%;
-  height: 100vh; /* Use 100vh to make sure it covers the full screen height */
-  background-image: url('./assets/image.jpeg');
+  height: calc(100vh - 70px); /* Adjust height for navbar */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('./assets/background.gif'); /* Correct path to your GIF */
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
-.overlay {
-  text-align: center;
-  padding: 20px;
-  background: rgba(0, 0, 0, 0.4); /* Adjusted transparency for a smoother effect */
-  border-radius: 10px;
-  width: 90%; /* Adjust for smaller screens */
-  max-width: 400px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for better contrast */
-}
-
-.title {
-  font-size: 36px;
-  margin-bottom: 20px;
+/* START AR Button */
+.start-button {
+  padding: 20px 40px;
+  font-size: 24px;
+  background-color: #007bff;
   color: #ffffff;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, transform 0.3s;
 }
 
-button:hover {
+.start-button:hover {
+  background-color: #0056b3;
   transform: scale(1.05);
 }
 
-button:active {
+.start-button:active {
   transform: scale(1);
 }
 
+/* AR Mode Fullscreen Container */
 .ar-mode {
   width: 100%;
   height: 100vh;
@@ -62,6 +80,7 @@ button:active {
   overflow: hidden;
 }
 
+/* Fullscreen AR Page Container */
 .fullscreen-container {
   width: 100%;
   height: 100vh;
